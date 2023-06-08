@@ -1,0 +1,11 @@
+# reubenemmens/client:1.1
+FROM python:3.9
+
+WORKDIR /app
+
+COPY client_requirements.txt .
+RUN pip install --no-cache-dir -r client_requirements.txt
+
+COPY client.py .
+
+CMD ["python", "client.py"]
